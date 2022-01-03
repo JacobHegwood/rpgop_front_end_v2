@@ -1,0 +1,17 @@
+/* define a flash in animation for status-bar */
+.status-bar {
+  opacity: 1;
+  content: " ";
+}
+
+.status-bar[flash="true"] {
+  animation: flash-in 0.5s ease-in-out;
+}
+@keyframes flash-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

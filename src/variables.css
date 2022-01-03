@@ -1,0 +1,10 @@
+/* create color variables in css */
+
+/* cream and black */
+:root {
+  --primary-dark: #020202;
+  --primary-light: #141414;
+  --secondary-light: #fffdd3;
+  --secondary-dark: #f5eab6;
+  --accent: #323333;
+}
