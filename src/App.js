@@ -6,7 +6,13 @@ import Modal from "./Modal";
 
 // import fontawesome from "@fortawesome/fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser, faUserAstronaut, faUserNinja } from "@fortawesome/free-solid-svg-icons";
+import {
+  faUser,
+  faUserAstronaut,
+  faUserNinja,
+} from "@fortawesome/free-solid-svg-icons";
+
+import bulma from "bulma/css/bulma.css";
 
 import React, { Component } from "react";
 
@@ -51,7 +57,7 @@ export default class App extends Component {
   };
 
   createPlayer = () => {
-    let modal = <div>Create Player</div>;
+    let modal = <div className="content">Create Player</div>;
     this.setState({
       modalVisible: true,
       modalContent: modal,
@@ -88,20 +94,21 @@ export default class App extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div className="App container is-fluid has-background-primary is-fullheight">
         <GameBoard
           entities={this.state.players}
           destroy={this.destroy}
           editName={this.editName}
         />
+
+        <CommandBar commandList={this.state.commandBar}>
+          <StatusBar text={this.state.statusText} />
+        </CommandBar>
         <Modal
           visible={this.state.modalVisible}
           content={this.state.modalContent}
           close={() => this.setState({ modalVisible: false })}
         />
-        <CommandBar commandList={this.state.commandBar}>
-          <StatusBar text={this.state.statusText} />
-        </CommandBar>
       </div>
     );
   }

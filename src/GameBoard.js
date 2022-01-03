@@ -13,10 +13,10 @@ export default class GameBoard extends Component {
 
   render() {
     return (
-      <div className="game-board">
+      <div className="columns is-black is-fullheight is-multiline">
         {this.props.entities.map((element) => {
           return (
-            <div className="game-board-entity">
+            <div className="column is-2-tablet is-1-widescreen">
               <div
                 className="game-board-entity-name"
                 onClick={() => this.editName(element)}
